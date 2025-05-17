@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Share</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Upload Video</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="video" required>
+    <button type="submit">Upload</button>
+  </form>
 
+  <h2>Videos</h2>
+  <div class="videos">
+    <% videos.forEach(function(video) { %>
+      <video controls src="<%= video %>" width="400"></video>
+    <% }); %>
+  </div>
+</body>
+</html>
